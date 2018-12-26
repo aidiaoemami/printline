@@ -23,3 +23,5 @@ Route::resources([
     'users' => 'UserController',
     'orders' => 'OrderController'
 ]);
+
+Route::get('/members', 'UserController@member')->name('users.member');

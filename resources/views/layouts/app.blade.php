@@ -87,10 +87,12 @@
                                 </a>
                             </li>
 
-                            <li class="nav-item">
-                                <a href="{{ route('users.index')}}" class="nav-link {{ request()->is('users') ? 'active' : ''}}">
-                                    <i class="fe fe-users"></i> Users
-                                </a>
+                            <li class="nav-item dropdown">
+                                <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown" aria-expanded="false"><i class="fe fe-users"></i> Users</a>
+                                <div class="dropdown-menu dropdown-menu-arrow" x-placement="bottom-start" style="position: absolute; transform: translate3d(12px, 55px, 0px); top: 0px; left: 0px; will-change: transform;">
+                                <a href="{{ route('users.member')}}" class="dropdown-item ">Member</a>
+                                <a href="{{ route('users.index')}}" class="dropdown-item ">Admin</a>
+                                </div>
                             </li>
 
                             <li class="nav-item">

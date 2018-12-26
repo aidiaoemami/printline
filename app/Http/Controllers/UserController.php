@@ -26,6 +26,12 @@ class UserController extends Controller
         return view("users.index", compact("users"));
     }
 
+    public function member()
+    {
+        $members = $this->service->getMember();
+        return view("users.member", compact("members"));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -44,10 +50,23 @@ class UserController extends Controller
      */
     public function store(UserRequest $request)
     {
-        $user = $this->service->create($request->toArray());
+        $user = $this->service->create($this->setStoreUser($request->toArray()));
         if ($user) {
             return redirect()->route('users.index')->with('message', 'Data Berhasil di Simpan');
         }
+        return redirect()->route('users.index')->with('message', 'Data Gagal di Simpan');
+    }
+
+    private function setStoreUser($data)
+    {
+        return [
+            "name" => $data["name"],
+            "email" => $data["email"],
+            "address" => $data["address"],
+            "phone" => $data["phone"],
+            "password" => bcrypt($data["password_confirmation"]),
+            "roles" => $data["roles"]
+        ];
     }
 
     /**

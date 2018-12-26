@@ -15,7 +15,24 @@ class UserService
 
     public function browse()
     {
-        return $this->model->paginate();
+        return $this->model->whereHas('roles', function ($query) {
+            return $query->where('name', '!=', 'member');
+        })->paginate();
+    }
+
+    public function getMember()
+    {
+        return $this->model->role("member")->paginate();
+    }
+
+    public function getAdmin()
+    {
+        return $this->model->role("admin")->get();
+    }
+
+    public function getSeller()
+    {
+        return $this->model->role("seller")->get();
     }
 
     public function read($id)
@@ -25,7 +42,8 @@ class UserService
 
     public function create($payload)
     {
-        $user = $this->model->add($payload);
+        $user = $this->model->create($payload);
+        $user->assignRole($payload["roles"]);
         return $user;
     }
 
