@@ -50,7 +50,7 @@ class MasterController extends Controller
     }
 
     public function tokosaya(){
-        $data= DB::table('toko')->where('id_user', \Auth::user()->id)->get();
+        $data= DB::table('toko')->where('id_user')->get();
         return view('tokosaya')->with('data', $data);
         //
 
@@ -112,7 +112,7 @@ class MasterController extends Controller
 
     public function tambahlayanan(){
         $data= DB::table('toko')->where('id_user', \Auth::user()->id)->get();
-        return view('tambahlayanan')->with('data', $data);
+        return view('tambahlayanan')->with('data',$data);
         // return view('tambahlayanan');
 
     }
@@ -125,6 +125,22 @@ class MasterController extends Controller
             'id_toko' => $request->id
             ]
         ]);
-        return 'sukses';
+        // return redirect()->route('tambahlayanan')->with('message', 'Data Harga Print Berhasil disimpan');
+        return redirect('tambahlayanan')->with('message', true);
+    }
+    public function tambahlayananjilid(){
+        $data= DB::table('toko')->where('id_user', \Auth::user()->id)->get();
+        return view('tambahlayanan')->with('data', $data);
+        // return view('tambahlayanan');
+
+    }
+    public function posttambahlayananjilid(Request $request){
+        DB::table('jilid')->insert([
+            ['warna' => $request->warnajilid,
+            'id_toko' => $request->id,
+            'harga' => $request->hargajilid
+            ]
+        ]);
+        return redirect('tambahlayanan')->with('message', true);
     }
 }
