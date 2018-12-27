@@ -25,3 +25,12 @@ Route::resources([
 ]);
 
 Route::get('/members', 'UserController@member')->name('users.member');
+Route::get('index', 'MasterController@index')->name('index');
+Route::get('toko', 'MasterController@toko')->name('toko');
+Route::post('toko', 'MasterController@posttoko');
+Route::get('tokosaya', 'MasterController@tokosaya')->name('tokosaya');
+Route::post('tokosaya', 'MasterController@updatetoko');
+Route::get('tambahlayanan', 'MasterController@tambahlayanan')->name('tambahlayanan');
+Route::post('tambahlayanan', 'MasterController@posttambahlayanan');
+Route::get('tambahlayananjilid', 'MasterController@tambahlayananjilid')->name('tambahlayananjilid');
+Route::post('tambahlayananjilid', 'MasterController@posttambahlayananjilid');

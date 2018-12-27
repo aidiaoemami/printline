@@ -63,8 +63,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         </div>
                         <div class="wthree-text">
                             <label class="anim">
-                                <input type="radio" name="type" id="seller" value="seller" required=""><label for="seller">Seller</label>
-                                <input type="radio" name="type" id="customer" value="member" required=""><label for="customer">Customer</label>
+                                <input type="radio" name="type" id="seller" value="seller" name="role" required=""><label for="seller">Seller</label>
+                                <input type="radio" name="type" id="customer" value="member" name="role" required=""><label for="customer">Customer</label>
                                 <br>
                                 <input type="checkbox" class="checkbox" required="">I Agree To The Terms & Conditions
                             </label>
