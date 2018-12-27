@@ -1,4 +1,6 @@
 # PrintLine
+[![Build Status](https://travis-ci.org/hanaazzah/PrintLine.svg?branch=master)](https://travis-ci.org/hanaazzah/PrintLine)
+
 Printline adalah sebuah aplikasi yang memungkinkan penggunanya bisa melakukan transaksi secara online
 
 ## Requirement
