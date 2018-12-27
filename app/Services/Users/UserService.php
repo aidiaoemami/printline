@@ -56,6 +56,6 @@ class UserService
 
     public function delete($id)
     {
-        return $this->model->destroy();
+        return $this->model->destroy($id);
     }
 }

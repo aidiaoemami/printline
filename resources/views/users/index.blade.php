@@ -23,7 +23,7 @@
                                             <th>Name</th>
                                             <th>Email</th>
                                             <th>Level</th>
-                                            <th class="w-4"></th>
+                                            <th class="w-5"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -52,12 +52,12 @@
                                             </td>
 
                                             <td>
-                                                <a class="icon" href="javascript:void(0)" title="Edit">
+                                                <a class="btn btn-success btn-sm" href="{{ url('/users') }}/{{$value->id}}/edit" title="Edit">
                                                     <i class="fe fe-edit"></i>
                                                 </a>
-                                                <a class="icon" href="javascript:void(0)" title="Delete">
-                                                    <i class="fe fe-trash"></i>
-                                                </a>
+                                                {!! Form::open(['method' => 'DELETE', 'route' => ['users.destroy', $value->id], 'onsubmit' => 'return confirm("Yakin akan menghapus data?")']) !!}
+                                                {{ Form::button('<i class="fe fe-trash"></i>', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm'] )  }}
+                                                {!! Form::close() !!}
                                             </td>
                                         </tr>
                                         @endforeach
