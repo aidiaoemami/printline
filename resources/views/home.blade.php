@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Home</title>
+    <title>Home   </title>
 </head>
 <body>
 @section('content')
@@ -25,7 +25,9 @@
                    <thead>
                       <th>No</th>
                       <th>Nama Pelanggan</th>
-                      <th colspan="2">Pesanan</th>
+                      <th>Jenis Cetak</th>
+                      <th>Ukuran</th>
+                      <th>Jilid</th>
                       <th>Tanggal Pesan</th>
                       <th>Tanggal Ambil</th>
                       <th>Harga</th>
@@ -37,16 +39,26 @@
     @foreach($data as $value)
         <tr>
         <td>{{$no++}}</td>
-        <td>{{$value->id_user}}</td>
-        <td>{{$value->id_print}}</td>
-        <td>{{$value->id_jilid}}</td>
+        <td>{{$value->nama}}</td>
+        @foreach ($dataprint as $print)
+        <td>{{$print->jenis_cetak}}</td>
+        <td>{{$print->ukuran}}</td>
+        @endforeach
+        @foreach ($datajilid as $jilid)
+        <td>{{$jilid->warna}}</td>
+        @endforeach
         <td>{{$value->tgl_pesan}}</td>
         <td>{{$value->tgl_ambil}}</td>
         <td>{{$value->total}}</td>
         <td>{{$value->note}}</td>
-        <td>{{$value->status}}</td>
-        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
-        <td><p data-placement="top" data-toggle="tooltip" title="Delete"><button class="btn btn-danger btn-xs" data-title="Delete" data-toggle="modal" data-target="#delete" ><span class="glyphicon glyphicon-trash"></span></button></p></td>
+        <!-- <td><a href="status/{-{$value->id}}" class="btn btn-warning">{{$value->status}}</a></td> -->
+        <td>{{$value->status}}</a></td>
+        @if($value->status != 'Selesai')
+        <td><a name="status"href="{{route('editstatus', $value->id)}}" value="selesai" class="btn btn-success">Selesai</a></td>
+        @endif
+        <!-- <td>{{$value->status}}</td>
+        <td><p data-placement="top" data-toggle="tooltip" title="Edit"><a href=""></a><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td> -->
+        
         </tr>
 
     @endforeach

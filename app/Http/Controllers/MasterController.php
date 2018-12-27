@@ -16,8 +16,23 @@ class MasterController extends Controller
                 if (!$toko) {
                     return redirect('toko');
                 }
-                $data= DB::table('pesan')->get();
-                return view('home')->with('data', $data); 
+                $data= DB::table('pesan')
+                    ->join('users', 'pesan.id_pelanggan', '=', 'users.id')
+                    ->select('pesan.id as id', 'users.nama', 'pesan.tgl_pesan', 'pesan.tgl_ambil', 'pesan.total', 'pesan.note', 'pesan.status')
+                    ->where('pesan.id_user', \Auth::user()->id)->get();
+                $dataprint = DB::table('pesan')
+                    ->join('print', 'pesan.id_print', '=', 'print.id')
+                    ->where('pesan.id_user', \Auth::user()->id)
+                    ->get();
+                $datajilid = DB::table('pesan')
+                ->join('jilid', 'pesan.id_jilid', '=', 'jilid.id')
+                ->where('pesan.id_user', \Auth::user()->id)
+                ->get();
+                $datatoko = DB::table('pesan')
+                ->join('toko', 'pesan.id_toko', '=', 'toko.id')
+                ->get();
+                return view('home')->with(['data'=>$data,'datajilid'=>$datajilid, 'dataprint'=>$dataprint]); 
+                    // return DD($data);
             }
             return view('home');
         }
@@ -50,11 +65,23 @@ class MasterController extends Controller
     }
 
     public function tokosaya(){
-        $data= DB::table('toko')->where('id_user')->get();
-        return view('tokosaya')->with('data', $data);
+        // $data= DB::table('toko')->where('id_user', \Auth::user()->id)->get();
+        $data= DB::table('toko')
+                ->join('users', 'users.id', '=', 'toko.id_user')
+                // ->join('jilid', 'toko.id', '=', 'jilid.id_toko')
+                ->where('users.id', \Auth::user()->id)->get();
+        $datajilid= DB::table('toko')
+                    ->join('jilid', 'toko.id', '=', 'jilid.id_toko')
+                    ->where('toko.id', \Auth::user()->id)->get();
+        $dataprint= DB::table('toko')
+                    ->join('print', 'toko.id', '=', 'print.id_toko')
+                    ->where('toko.id', \Auth::user()->id)->get();
+        // return DD($datajilid);
+
+        return view('tokosaya')->with(['data'=>$data, 'datajilid'=>$datajilid, 'dataprint'=>$dataprint]);
         //
 
-         // return $data;
+         // return dd($data);
     }
 
     public function updatetoko(Request $request){
@@ -119,7 +146,6 @@ class MasterController extends Controller
     public function posttambahlayanan(Request $request){
         DB::table('print')->insert([
             ['jenis_cetak' => $request->print,
-            'ink_coverage' => $request->ink_coverage,
             'ukuran' => $request->ukuran,
             'harga' => $request->harga,
             'id_toko' => $request->id
@@ -143,4 +169,53 @@ class MasterController extends Controller
         ]);
         return redirect('tambahlayanan')->with('message', true);
     }
+
+    public function editstatus($id){
+        $status = DB::table('pesan')->where('id',$id)->update(['status'=>'selesai']);
+        // $status = pesan::find($id);
+        // $status->status= $request->get('status');
+        // $status->save();
+        return redirect('home');
+        // return $status;
+
+    }
+    public function pesan(){
+        return view('pesan');
+    }
+    public function edittoko($id){
+        $data= DB::table('toko')->where('id', $id)->get();
+        return view('edittoko')->with('data', $data);
+    }
+    public function postedittoko(Request $request){
+        $data= DB::table('toko')->where('id', $request->id)->update(
+            [
+                'nama_toko' => $request->nama_toko,
+                'alamat' => $request->alamat,
+                'deskripsi'=>$request->deskripsi
+            ]
+        );
+        return redirect('tokosaya');
+    }
+    public function editaccount($id){
+        $data= DB::table('users')->where('id', \Auth::user()->id)->get();
+        return view('editaccount')->with('data', $data);
+    }
+    
+    public function posteditaccount(Request $request){
+        $data= DB::table('users')->where('id', $request->id)->update(
+            [
+                'nama' => $request->nama,
+                'username' => $request->username,
+                'email'=>$request->email
+            ]
+        );
+        return redirect('tokosaya');
+    }
+
+    // public function posteditaccount($id)
+    // public function updatetoko($id){
+    //     $toko = toko::find($id);
+    //     return view('toko.edittoko', compact('toko', 'id'));
+    // }
+
 }
