@@ -1,80 +1,71 @@
-@extends('layouts.app')
+<!--
+Author: Colorlib
+Author URL: https://colorlib.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
 
-@section('content')
-<div class="page-single">
-    <div class="container">
-        <div class="row">
-            <div class="col col-login mx-auto">
-                <div class="text-center mb-6">
-                    <img
-                        src="/img/logo.png"
-                        class="h-6"
-                        alt="Logo Tabler">
-                </div>
-                <form class="card" action="{{ route('login') }}" method="post" novalidate>
-                    @csrf
-                    <div class="card-body p-6">
-                        <div class="card-title">@lang('Login to your account')</div>
+<head>
+    <title>Login - Printline</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- Custom Theme files -->
+    <link href="frontpage/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- //Custom Theme files -->
+    <!-- web font -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+    <!-- //web font -->
+</head>
 
-                        <div class="form-group">
-                            <label class="form-label" for="email">@lang('E-Mail Address')</label>
-                            <input
-                                type="email"
-                                class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                name="email"
-                                id="email"
-                                aria-describedby="emailHelp"
-                                placeholder="Enter email"
-                                value="{{ old('email') }}"
-                                required
-                                autofocus>
-                            @if ($errors->has('email'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label">
-                                @lang('Password')
-                                <a href="{{ route('password.request') }}" class="float-right small">
-                                    @lang('I forgot my password')
-                                </a>
-                            </label>
-                            <input
-                                type="password"
-                                class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
-                                name="password"
-                                id="password"
-                                placeholder="Password">
-                            @if ($errors->has('password'))
-                                <span class="invalid-feedback">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                            @endif
-                        </div>
-                        <div class="form-group">
-                            <label class="custom-control custom-checkbox">
-                                <input
-                                    type="checkbox"
-                                    class="custom-control-input"
-                                    name="remember"
-                                    {{ old('remember') ? 'checked' : '' }}/>
-                                <span class="custom-control-label">@lang('Remember me')</span>
-                            </label>
-                        </div>
-
-                        <div class="form-footer">
-                            <button type="submit" class="btn btn-primary btn-block">@lang('Sign in')</button>
-                        </div>
-                    </div>
+<body>
+    <!-- main -->
+    <div class="main-w3layouts wrapper">
+        <h1>Login</h1>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form action="{{route('login')}}" method="post">
+                    {{ csrf_field() }}
+                    <input type="email" class="text email{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
+                        id="email" aria-describedby="emailHelp" placeholder="Enter email" value="{{ old('email') }}"
+                        required autofocus>
+                    @if ($errors->has('email'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                    @endif
+                    <input class="text" type="password" name="password" placeholder="Password" required="">
+                    @if ($errors->has('password'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                    @endif
+                    <input type="submit" value="LOGIN">
                 </form>
-
-                <div class="text-center text-muted">
-                    Don't have an account yet? <a href="{{ route('register') }}">Sign up</a>
-                </div>
+                <p>Don't have an Account? <a href="{{ route('register') }}"> Sign Up Now!</a></p>
             </div>
         </div>
+        <!-- copyright -->
+        <div class="colorlibcopy-agile">
+            <p>© 2018 Printline</p>
+        </div>
+        <!-- //copyright -->
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
     </div>
-</div>
-@endsection
+    <!-- //main -->
+</body>
+
+</html>
