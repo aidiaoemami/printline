@@ -1,0 +1,35 @@
+# role user
+sudo: required
+
+# OS yang digunakan, precies, trusty, xenial
+dist: trusty
+
+# bahasa yang digunakan
+language: php
+
+# Versi bahasa yang digunakan
+php:
+  - 7.1
+
+# branch apa saja yang mau digunakan
+branches:
+  only:
+    - master
+    - develop
+
+# Proses build
+before_script:
+  - cp .env.travis .env
+  - composer install --no-interaction
+  - php artisan key:generate
+
+# script (main execution)
+script:
+  - ./vendor/bin/phpunit
+
+# setelah main execution selesai
+# deploy:
+#   provider: heroku
+#   api_key:
+#     secure: "27bc6124-10bd-4d2e-aa01-39c450567e01"
+#   app: PrintLine
