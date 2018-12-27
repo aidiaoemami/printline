@@ -5,12 +5,12 @@
 </head>
 <body>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" type="text/css" href="/css/style-navbar.css">
+<link rel="stylesheet" type="text/css" href="frontpage/css/style-navbar.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="/js/style-navbar.js"></script>
-<script type="text/javascript" src="/js/list.js"></script>
-<link rel="stylesheet" type="text/css" href="/css/footer.css">
+<script type="text/javascript" src="frontpage/js/style-navbar.js"></script>
+<script type="text/javascript" src="frontpage/js/list.js"></script>
+<link rel="stylesheet" type="text/css" href="frontpage/css/footer.css">
 
 <!------ Include the above in your HEAD tag ---------->
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -146,14 +146,14 @@
                 <p>CopyRight © 2017 Digital All Rights Reserved</p>
               </div>
             </div> End Col
-            <div class="col-sm-6">              
+            <div class="col-sm-6">
               <ul class="social-link pull-right">
-                <li><a href=""><span class="glyphicon glyphicon-heart-empty"></span></a></li>           
                 <li><a href=""><span class="glyphicon glyphicon-heart-empty"></span></a></li>
                 <li><a href=""><span class="glyphicon glyphicon-heart-empty"></span></a></li>
                 <li><a href=""><span class="glyphicon glyphicon-heart-empty"></span></a></li>
                 <li><a href=""><span class="glyphicon glyphicon-heart-empty"></span></a></li>
-              </ul>             
+                <li><a href=""><span class="glyphicon glyphicon-heart-empty"></span></a></li>
+              </ul>
             </div> End Col
           </div>
         </div>
@@ -166,7 +166,7 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 
-<!--   FOOTER START================== --> 
+<!--   FOOTER START================== -->
 <footer class="footer">
     <div class="container">
         <div class="row">
@@ -184,8 +184,8 @@
         </div>
         <div class="col-sm-3">
             <h4 class="title">Address</h4>
-            <span class="acount-icon">          
-            <p>Permai 5 Cipadung<br>Cibiru<br>Kota Bandung, Jawa Barat</p>        
+            <span class="acount-icon">
+            <p>Permai 5 Cipadung<br>Cibiru<br>Kota Bandung, Jawa Barat</p>
             </span>
         </div>
         <div class="col-sm-3">
@@ -199,7 +199,7 @@
                 <a href="#">teshart</a>
                 <a href="#">top</a>
                 <a href="#">glass</a>
-                <a href="#">baby dress</a>          
+                <a href="#">baby dress</a>
             </div>
         </div>
         <div class="col-sm-3">
@@ -207,7 +207,7 @@
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             <ul class="payment">
                 <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>            
+                <li><a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
             </ul>
@@ -215,7 +215,7 @@
         </div>
         <hr>
         <div class="row text-center"><a href="http://lacodeid.com/" style="color: #fff;">Copyright © PrintLile 2018</a></div>
-    </div>  
+    </div>
 </footer>
 </body>
 </html>
