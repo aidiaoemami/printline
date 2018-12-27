@@ -475,12 +475,6 @@
             </div>
         </div>
         @endrole
-
-        @role('seller')
-        @endrole
-
-        @role('member')
-        @endrole
     </div>
 </div>
 @endsection

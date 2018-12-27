@@ -63,7 +63,7 @@
         </div>
       </div>
       <div class="form-group" style="margin-right: 0px;">
-        <label class="col-md-4 control-label" for="textinput">Harga</label>  
+        <label class="col-md-4 control-label" for="textinput">Harga</label>
         <div class="col-md-4">
           <input name="harga" type="number" class="form-control input-md">
         </div>

@@ -66,7 +66,7 @@
   </div>
 </div> -->
 <div class="form-group" style="margin-right: 0px;">
-  <label class="col-md-4 control-label" for="textinput">Harga</label>  
+  <label class="col-md-4 control-label" for="textinput">Harga</label>
   <div class="col-md-4">
   <input name="harga" type="number" class="form-control input-md">
   </div>
@@ -83,7 +83,7 @@
 </fieldset>
 </form>
 </div>
- 
+
  <!-- layanan jilid -->
 
 <form class="form-horizontal" action="{{route('tambahlayananjilid')}}" method="post">
@@ -100,13 +100,13 @@
   @endforeach
 </div>
 <div class="form-group" style="margin-right: 0px; padding-left: 15px;">
-  <label class="col-md-4 control-label" for="textinput">Warna Jilid</label>  
+  <label class="col-md-4 control-label" for="textinput">Warna Jilid</label>
   <div class="col-md-4">
   <input name="warnajilid" type="text" class="form-control input-md">
   </div>
 </div>
 <div class="form-group" style="margin-right: 0px; padding-left: 15px;">
-  <label class="col-md-4 control-label" for="textinput">Harga</label>  
+  <label class="col-md-4 control-label" for="textinput">Harga</label>
   <div class="col-md-4">
   <input name="hargajilid" type="number" class="form-control input-md">
   </div>
@@ -119,22 +119,22 @@
     <button id="singlebutton" style="background: #76b852; border-color: #76b852"class="btn btn-primary">Simpan</button>
   </div>
 </div>
-<div class="form-group" style="margin-right: 0px;"> 
+<div class="form-group" style="margin-right: 0px;">
   <div class="col-md-4">
   <input name="harga" type="hidden" class="form-control input-md">
 
   </div>
 </div>
-<div class="form-group" style="margin-right: 0px;"> 
+<div class="form-group" style="margin-right: 0px;">
   <div class="col-md-4">
   <input name="harga" type="hidden" class="form-control input-md">
-  
+
   </div>
 </div>
-<div class="form-group" style="margin-right: 0px;"> 
+<div class="form-group" style="margin-right: 0px;">
   <div class="col-md-4">
   <input name="harga" type="hidden" class="form-control input-md">
-  
+
   </div>
 </div>
 

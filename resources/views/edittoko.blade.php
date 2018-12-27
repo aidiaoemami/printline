@@ -27,19 +27,19 @@
       <div class="form-group" style="margin-right: 0px;">
         @foreach($data as $value)
         <input type="hidden" name="id" value="{{$value->id}}">
-        <label class="col-md-4 control-label" for="textinput">Nama Toko</label>  
+        <label class="col-md-4 control-label" for="textinput">Nama Toko</label>
         <div class="col-md-4">
           <input name="nama_toko" type="text" value="{{$value->nama_toko}}" class="form-control input-md">
         </div>
       </div>
       <div class="form-group" style="margin-right: 0px;">
-        <label class="col-md-4 control-label" for="textinput">Alamat</label>  
+        <label class="col-md-4 control-label" for="textinput">Alamat</label>
         <div class="col-md-4">
           <input name="alamat" value="{{$value->alamat}}"type="text" class="form-control input-md">
         </div>
       </div>
       <div class="form-group" style="margin-right: 0px;">
-        <label class="col-md-4 control-label" for="textinput">Deskripsi</label>  
+        <label class="col-md-4 control-label" for="textinput">Deskripsi</label>
         <div class="col-md-4">
           <input name="deskripsi" value="{{$value->deskripsi}}"type="text" class="form-control input-md">
         </div>

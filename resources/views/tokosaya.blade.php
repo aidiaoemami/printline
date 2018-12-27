@@ -127,7 +127,7 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <div class="container emp-profile">
-            
+
                 {{ csrf_field() }}
                 <div class="row">
                     <div class="col-md-4">
@@ -167,22 +167,12 @@
                             </ul>
                         </div>
                     </div>
-                        
-                    
+
+
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
-                            <!-- <p>WORK LINK</p>
-                            <a href="">Website Link</a><br/>
-                            <a href="">Bootsnipp Profile</a><br/>
-                            <a href="">Bootply Profile</a>
-                            <p>SKILLS</p>
-                            <a href="">Web Designer</a><br/>
-                            <a href="">Web Developer</a><br/>
-                            <a href="">WordPress</a><br/>
-                            <a href="">WooCommerce</a><br/>
-                            <a href="">PHP, .Net</a><br/> -->
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -193,7 +183,7 @@
                                                 <label>Nama Lengkap</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>{{$value->nama}}</p>
+                                                <p>{{$value->name}}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -267,7 +257,7 @@
                                   </tr>
                                   <tr>
                                     @endforeach
-                                    
+
                                 </table>
                               </tr>
                               <br>
@@ -290,7 +280,7 @@
                                   </tr>
                                   <tr>
                                     @endforeach
-                                    
+
                                 </table>
                               </tr>
                             </table>
@@ -315,14 +305,14 @@
                                   </tr>
                                   <tr>
                                     @endforeach
-                                    
+
                                 </table>
                             </div>
                         </div>
                     </div>
                 </div>
-                       
-        </div>  
 
- 
+        </div>
+
+
 @endsection
