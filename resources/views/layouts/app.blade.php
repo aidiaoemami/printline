@@ -1,3 +1,4 @@
+@role("admin")
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
 <head>
@@ -120,3 +121,4 @@
     </div>
 </body>
 </html>
+@endrole

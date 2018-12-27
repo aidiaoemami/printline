@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
 <head>
   <title>@yield('title')</title>
 </head>
 <body>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<link rel="stylesheet" type="text/css" href="frontpage/css/style-navbar.css">
+<link rel="stylesheet" type="text/css" href="/css/style-navbar.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<script type="text/javascript" src="frontpage/js/style-navbar.js"></script>
-<script type="text/javascript" src="frontpage/js/list.js"></script>
-<link rel="stylesheet" type="text/css" href="frontpage/css/footer.css">
+<script type="text/javascript" src="/js/style-navbar.js"></script>
+<script type="text/javascript" src="/js/list.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/footer.css">
 
 <!------ Include the above in your HEAD tag ---------->
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -22,17 +22,12 @@
                 <li class="upper-links"><a class="links" href="{{route('home')}}">Home</a></li>
                 <li class="upper-links"><a class="links" href="{{route('tokosaya')}}">Toko Saya</a></li>
                 <li class="upper-links"><a href="{{route('tambahlayanan')}}" class="links">Tambah Layanan</a>
-
+                    <ul class="dropdown-menu">
+                        <li class="profile-li"><a class="profile-links" href="{{route('logout')}}">Logout</a></li>
+                    </ul>
                 </li>
                 <li class="upper-links"><a class="links" href="http://clashhacks.in/">Saldo</a></li>
                 @if ((session()->has('login')))
-                <li class="upper-links">
-                    <a class="links" href="http://clashhacks.in/">
-                        <svg class="" width="16px" height="12px" style="overflow: visible;">
-                            <path d="M8.037 17.546c1.487 0 2.417-.93 2.417-2.417H5.62c0 1.486.93 2.415 2.417 2.415m5.315-6.463v-2.97h-.005c-.044-3.266-1.67-5.46-4.337-5.98v-.81C9.01.622 8.436.05 7.735.05 7.033.05 6.46.624 6.46 1.325v.808c-2.667.52-4.294 2.716-4.338 5.98h-.005v2.972l-1.843 1.42v1.376h14.92v-1.375l-1.842-1.42z" fill="#fff"></path>
-                        </svg>Notifikasi
-                    </a>
-                </li>
                     <li class="upper-links dropdown"><a class="links">{{\Auth::user()->nama}}</a>
                     <ul class="dropdown-menu">
                         <li class="profile-li"><a class="profile-links" href="{{route('logout')}}">Logout</a></li>
@@ -87,7 +82,7 @@
             <ul class="largenav pull-right">
                 <li class="upper-links"><a class="links" href="{{route('tokosaya')}}">About</a></li>
                 <li class="upper-links"><a class="links" href="https://campusbox.org/">Tempat Cetak</a></li>
-                <li class="upper-links"><a class="links" href="{{route('login')}}">Cetak Dokumen</a></li>
+                <li class="upper-links"><a class="links" href="{{url('pesan')}}">Cetak Dokumen</a></li>
                 @if ((session()->has('login')))
                 <li class="upper-links">
                     <a class="links" href="http://clashhacks.in/">
@@ -151,14 +146,14 @@
                 <p>CopyRight © 2017 Digital All Rights Reserved</p>
               </div>
             </div> End Col
-            <div class="col-sm-6">
+            <div class="col-sm-6">              
               <ul class="social-link pull-right">
+                <li><a href=""><span class="glyphicon glyphicon-heart-empty"></span></a></li>           
                 <li><a href=""><span class="glyphicon glyphicon-heart-empty"></span></a></li>
                 <li><a href=""><span class="glyphicon glyphicon-heart-empty"></span></a></li>
                 <li><a href=""><span class="glyphicon glyphicon-heart-empty"></span></a></li>
                 <li><a href=""><span class="glyphicon glyphicon-heart-empty"></span></a></li>
-                <li><a href=""><span class="glyphicon glyphicon-heart-empty"></span></a></li>
-              </ul>
+              </ul>             
             </div> End Col
           </div>
         </div>
@@ -171,7 +166,7 @@
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 
-<!--   FOOTER START================== -->
+<!--   FOOTER START================== --> 
 <footer class="footer">
     <div class="container">
         <div class="row">
@@ -189,8 +184,8 @@
         </div>
         <div class="col-sm-3">
             <h4 class="title">Address</h4>
-            <span class="acount-icon">
-            <p>Permai 5 Cipadung<br>Cibiru<br>Kota Bandung, Jawa Barat</p>
+            <span class="acount-icon">          
+            <p>Permai 5 Cipadung<br>Cibiru<br>Kota Bandung, Jawa Barat</p>        
             </span>
         </div>
         <div class="col-sm-3">
@@ -204,7 +199,7 @@
                 <a href="#">teshart</a>
                 <a href="#">top</a>
                 <a href="#">glass</a>
-                <a href="#">baby dress</a>
+                <a href="#">baby dress</a>          
             </div>
         </div>
         <div class="col-sm-3">
@@ -212,7 +207,7 @@
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
             <ul class="payment">
                 <li><a href="#"><i class="fa fa-cc-amex" aria-hidden="true"></i></a></li>
-                <li><a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>
+                <li><a href="#"><i class="fa fa-credit-card" aria-hidden="true"></i></a></li>            
                 <li><a href="#"><i class="fa fa-paypal" aria-hidden="true"></i></a></li>
                 <li><a href="#"><i class="fa fa-cc-visa" aria-hidden="true"></i></a></li>
             </ul>
@@ -220,7 +215,7 @@
         </div>
         <hr>
         <div class="row text-center"><a href="http://lacodeid.com/" style="color: #fff;">Copyright © PrintLile 2018</a></div>
-    </div>
+    </div>  
 </footer>
 </body>
 </html>

@@ -47,14 +47,14 @@
     <select id="selectbasic" name="ukuran" class="form-control">
       <option>---Pilih---</option>
       <option value="A4">A4</option>
-      <option value="A3">A3</option>
+      <option value="A5">A5</option>
       <option value="F4">F4</option>
     </select>
   </div>
 </div>
 
 <!-- Select Basic -->
-<div class="form-group" style="margin-right: 0px;">
+<!-- <div class="form-group" style="margin-right: 0px;">
   <label class="col-md-4 control-label" for="selectbasic">Ink Coverage</label>
   <div class="col-md-4">
     <select id="selectbasic" name="ink_coverage"class="form-control">
@@ -64,7 +64,7 @@
       <option value="full">High</option>
     </select>
   </div>
-</div>
+</div> -->
 <div class="form-group" style="margin-right: 0px;">
   <label class="col-md-4 control-label" for="textinput">Harga</label>  
   <div class="col-md-4">
